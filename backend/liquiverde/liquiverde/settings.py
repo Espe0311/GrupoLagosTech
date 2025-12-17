@@ -25,8 +25,11 @@ SECRET_KEY = "django-insecure-147(w^vutru=%pwdw)+)n4g_1wo^-a8wlwpa7cpjf39pbp3ec#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "http://localhost:5173",
+]
 
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 
@@ -39,9 +42,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "LiquiVerdeApp",
     "rest_framework",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
