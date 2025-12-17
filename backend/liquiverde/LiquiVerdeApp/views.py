@@ -8,5 +8,6 @@ from .services.external_api import get_external_data
 
 class ExternalDataView(APIView):
     def get(self, request):
-        data = get_external_data(params=request.query_params)
+        page = request.query_params.get("page", 1)
+        data = get_external_data(page=page)
         return Response(data, status=status.HTTP_200_OK)
