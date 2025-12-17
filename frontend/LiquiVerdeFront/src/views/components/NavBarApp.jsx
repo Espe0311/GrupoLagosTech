@@ -8,6 +8,7 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Badge from '@mui/material/Badge';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -51,7 +52,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function NavBarApp() {
+export default function NavBarApp({cartItems}) {
   return (
     <Box sx={{ flexGrow: 1}}>
       <AppBar position="fixed" color='success' sx={{ width: '100vw', left: 0 }}>
@@ -84,6 +85,7 @@ export default function NavBarApp() {
             LiquiVerde
           </Typography>
 
+          
           <IconButton
             size="large"
             edge="start"
@@ -91,7 +93,9 @@ export default function NavBarApp() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <ShoppingCartIcon />
+            <Badge badgeContent={cartItems} color="primary">
+              <ShoppingCartIcon />
+            </Badge>
           </IconButton>
         </Toolbar>
       </AppBar>
