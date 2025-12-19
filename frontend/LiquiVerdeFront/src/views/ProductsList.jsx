@@ -61,15 +61,14 @@ export default function ProductsList({ addToCart }) {
       {results.map((item) => (
         <ImageListItem key={item.image_small_url}>
           <img
-            //srcSet={`${item.images}`}
             src={`${item.image_small_url}`}
             alt={item.product_name || item.brands}
             loading="lazy"
             style={{
-                width: '100%',           // Asegura que ocupe todo el ancho del contenedor
+                width: '100%',
                 height: '100%',
-                objectFit: 'contain', // Cambia cover por contain
-                background: '#f5f5f5', // Fondo claro para imágenes pequeñas
+                objectFit: 'contain',
+                background: '#f5f5f5',
                 borderRadius: 8
             }}
           />
