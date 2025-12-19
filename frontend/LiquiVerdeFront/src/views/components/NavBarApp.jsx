@@ -7,8 +7,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import Badge from '@mui/material/Badge';
+import LateralBar from './LateralBar';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -85,18 +84,8 @@ export default function NavBarApp({cartItems}) {
             LiquiVerde
           </Typography>
 
+          <LateralBar cartItems={cartItems}/>
           
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <Badge badgeContent={cartItems} color="primary">
-              <ShoppingCartIcon />
-            </Badge>
-          </IconButton>
         </Toolbar>
       </AppBar>
     </Box>
